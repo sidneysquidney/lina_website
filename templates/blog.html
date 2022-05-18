@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center text-center">
+    <h1 class='cool-font'>{{page_info['title_txt']}}</h1>
+    
+</div>
+<div class="row">
+    <div class="col-12 text-center">
+        <img src={{ page_info['cover_jpg'] }} class='w-100 my-3'>
+        <h4 class='other-font'>{{page_info['description_txt']}}</h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        {% for count in range(1, page_info['count'] + 1) %} 
+            {% if count | string + '_txt' in page_info.keys() %}
+            <p>{{ page_info[count | string + '_txt' ]}}</p>
+            {% endif %}
+            {% if count | string + '_jpg' in page_info.keys() %}
+            <img src={{ page_info[count | string + '_jpg'] }} class='w-100 my-3'>
+            {% endif %}
+            
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

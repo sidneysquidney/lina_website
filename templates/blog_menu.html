@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-6 col-12">
+        {% for page, url in col_one.items() %}
+        <a href={{ url_for('blog', page=page) }} class = 'link'>
+        <div class="card text-center my-5 mx-2 border-dark">
+            <img src={{url}} class="card-img-top" alt={{page}}>
+            <div class="card-body">
+                <h3 class="card-title cool-font link">{{ blogs_dict[page].title | title}}</h3>
+                <p class="card-text">{{ blogs_dict[page].description }}</p>
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+    </div>
+    <div class="col-lg-6 col-12">
+        {% for page, url in col_two.items() %}
+        <a href={{ url_for('blog', page = page) }} class='link'>
+        <div class="card text-center my-5 mx-2 border-dark">
+            <img src={{url}} class="card-img-top" alt={{page}}>
+            <div class="card-body">
+                <h3 class="card-title cool-font link">{{ blogs_dict[page].title | title}}</h3>
+                <p class="card-text">{{ blogs_dict[page].description }}</p>
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+* {
+    background-color: #faf3e6;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face { font-family: 'Abyssopelagic'; 
+    src: url('./abyssopelagic.otf') format('opentype'); } 
+
+#sids-bg {
+    background-color: #faf3e6;
+}
+
+a p, i, h3 {
+    color: black;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: gray;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.submit-button {
+    padding: 5px;
+}
+
+h1, h3 , li{
+    font-family: "Abyssopelagic", sans-serif;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    font-weight: 900;
+  }
+
+.cool-font {
+    font-family: "Abyssopelagic", sans-serif;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    font-weight: 900;
+    color: black;
+}
+  
+  p, .other-font {
+    font-family: "Lato", sans-serif;
+  }

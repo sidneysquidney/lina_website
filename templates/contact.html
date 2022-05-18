@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="row mx-1 mx-md-0">
+  <div class="col-12 col-lg-5 my-lg-0 my-4">
+      <img src="/../static/images/lina_about.jpg" alt="lina" class='w-100'>
+  </div>
+  <div class="col-12 col-lg-7">
+    <p>As a child I dressed up my barbie dolls and arranged them like models. 
+        It pains me to think how much film my parents paid for to be developed, 
+        only to find out I’d run rampage as a make-belief fashion photographer. 
+        My passion for photography did not dwindle with age so upon finishing school 
+        I studied film & photography at the School of Visual Arts on Mallorca.
+         My main love was always for portraits and photo journalism. I love 
+         capturing the essence of a person or a moment. However, 
+         I found work as a set photographer and production assistant at the executive 
+         production firm Mamma Team in Barcelona and thrived in the busy environment 
+         of advertising and fashion. In 2017, I relocated from Barcelona to Bath to 
+         study Creative Writing and continue to work as a freelance photographer. 
+        Recently I have most enjoyed shooting outdoor portraits and pets!</p>
+  </div>
+</div>
+<div class="row mx-1 mx-md-0 my-1">
+  <div class="col">
+    <p>I was born in Germany and raised in Spain; 
+        two places so different, they set you up for a life of 
+        trying-to-find-yourself. Growing up I spent a lot of time 
+        in nature; around lakes and rivers, pine forests and seashores.
+         My childhood smells of wet leather, horses and bedtime stories
+          by an open fire. Anti-mosquito candles, too. I allowed myself 
+          to be overwhelmed by Barcelona and rescued a French Bulldog 
+          puppy named Sheldon. I left advertising to move to England and 
+          pursue Creative Writing and ended up rediscovering my love for 
+          photography. I made friends and lost some on the way, learned 
+          that parents are people too and that marmite really is controversial.
+           I grew into the beginnings of who I might want to be. I like to think 
+           of my photography as something that captures the innocent magic of country living,
+            but also pays whimsical homage to the glitzy-grunge of cityscapes. 
+            Perhaps this is where I’m comfortable; somewhere between the silent 
+            comfort of undisturbed birdsongs and the exciting rumble of skateboards at 5 am.
+             Somewhere, in between.</p>
+    </div>
+</div>
+
+<div class="row mx-1 mx-md-0">
+  <div class="col">
+    <form method='POST'>
+      <p>{{ template_form.hidden_tag() }}</p>
+      <p>{{ template_form.name.label }}</p>
+      <p>{{ template_form.name() }}</p>
+      {% for message in template_form.name.errors %}
+        <small class="form-text text-danger">{{ message }}</small>
+      {% endfor %}
+      <p>{{ template_form.email.label }}</p>
+      <p>{{ template_form.email() }}</p>
+      {% for message in template_form.email.errors %}
+        <small class="form-text text-danger">{{ message }}</small>
+      {% endfor %}
+      <p>{{ template_form.request.label }}</p>
+      <p>{{ template_form.request() }}</p>
+      {% for message in template_form.request.errors %}
+        <small class="form-text text-danger">{{ message }}</small>
+      {% endfor %}
+      <p>{{ template_form.submit(class='submit-button') }}</p>
+  </form>
+  </div>
+
+</div>
+<div class="row mx-1 mx-md-0">
+  <div class="col">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+      <div class="alert alert-success" role="alert">
+        {{message}}
+      </div>
+      {% endfor %}
+    {% endif %}
+    {% endwith %}
+  </div>
+
+</div>
+<div class="row mx-1 mx-md-0">
+  <div class="col">  
+    <div>
+    <p>Alternatively you can reach me by email or instagram:</p>
+    <a href="mailto:linakatzmarcik@yahoo.de" class='link'><p class='link'>linakatzmarcik@yahoo.de</p></a>
+    <a href="https://www.instagram.com/linamariekc/"><i class="fa fa-instagram fa-2x link"></i></a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
